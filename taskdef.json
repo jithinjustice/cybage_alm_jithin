@@ -1,42 +1,21 @@
 
-
-
-
 {
-    "requiresCompatibilities": [
-        "EC2"
-    ],
+    "family": "cybage-alm-jithin-taskdef",
     "containerDefinitions": [
         {
-            "name": "alm-cybage-jithin",
             "image": "543816070942.dkr.ecr.us-east-1.amazonaws.com/cybage-alm-jithin",
-            "memory": "300",
+            "name": "alm-cybage-jithin",
+            "cpu": 10,
+            "memory": 256,
             "essential": true,
             "portMappings": [
                 {
-                    "hostPort": "0",
-                    "containerPort": "80",
-                    "protocol": "tcp"
+                    "containerPort": 80,
+                    "hostPort": 0
                 }
-            ],
-            "environment": null,
-            "mountPoints": null,
-            "volumesFrom": null,
-            "hostname": null,
-            "user": null,
-            "workingDirectory": null,
-            "extraHosts": null,
-            "logConfiguration": null,
-            "ulimits": null,
-            "dockerLabels": null
+            ]
         }
-    ],
-    "volumes": [],
-    "networkMode": null,
-    "memory": "600",
-    "cpu": "160",
-    "placementConstraints": [],
-    "family": "cybage-alm-jithin-taskdef",
-    "taskRoleArn": "arn:aws:iam::543816070942:role/ECSTaskRoleForReadAccessS3",
-    "executionRoleArn": "arn:aws:iam::543816070942:role/ecsTaskExecutionRole"
+    ]
 }
+
+
